@@ -55,7 +55,7 @@ class CardControl(models.Model):
                 return True, ""
             else:
                 return False, f"Transaction amount '{transaction['amount']}' is less than the minimum required amount of '{self.amount}'."
-        # return True, ""
+        return False, ""
 
     def __str__(self):
         return f"{self.get_control_type_display()} Control for {self.card.cardholder_name}"
